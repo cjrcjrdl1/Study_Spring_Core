@@ -1,4 +1,4 @@
-package min.order;
+package min.core.order;
 
 public class Order {
     private Long memberId;

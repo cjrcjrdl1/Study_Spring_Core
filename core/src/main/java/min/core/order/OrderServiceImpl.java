@@ -1,4 +1,4 @@
-package min.order;
+package min.core.order;
 
 import min.core.discount.Discount;
 import min.core.member.Member;

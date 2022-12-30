@@ -2,10 +2,9 @@ package min.core;
 
 import min.core.member.Grade;
 import min.core.member.Member;
-import min.core.member.MemberRepository;
 import min.core.member.MemberService;
-import min.order.Order;
-import min.order.OrderService;
+import min.core.order.Order;
+import min.core.order.OrderService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

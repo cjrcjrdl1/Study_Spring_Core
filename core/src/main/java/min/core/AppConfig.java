@@ -1,14 +1,13 @@
 package min.core;
 
 import min.core.discount.Discount;
-import min.core.discount.FixDiscount;
 import min.core.discount.RateDiscount;
 import min.core.member.MemMemberRepository;
 import min.core.member.MemberRepository;
 import min.core.member.MemberService;
 import min.core.member.MemberServiceImpl;
-import min.order.OrderService;
-import min.order.OrderServiceImpl;
+import min.core.order.OrderService;
+import min.core.order.OrderServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
