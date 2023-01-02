@@ -5,6 +5,8 @@ import min.core.member.MemberService;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -47,5 +49,22 @@ public class SingletonTest {
         //내부속성을 변경하거나 초기화하기 어려움
         //private 생성자로 자식 클래스를 만들기 어려움
         //유연성이 떨어지고 안티패턴으로 불리기도 함
+    }
+
+    @Test
+    @DisplayName("스프링 컨테이너와 싱글톤")
+    void springContainer() {
+        ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+
+        MemberService memberService1 = ac.getBean("memberService", MemberService.class);
+        MemberService memberService2 = ac.getBean("memberService", MemberService.class);
+
+        System.out.println("memberService1 = " + memberService1);
+        System.out.println("memberService2 = " + memberService2);
+
+        assertThat(memberService1).isSameAs(memberService2);
+
+        //스프링 컨테이너 사용시 싱글톤 적용되어있음(이미 만들어진 객체를 공유하여 효율적으로 재사용 할 수 있음)
+
     }
 }
