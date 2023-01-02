@@ -3,7 +3,10 @@ package min.core.order;
 import min.core.discount.Discount;
 import min.core.member.Member;
 import min.core.member.MemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class OrderServiceImpl implements OrderService {
 
     private final MemberRepository memberRepository;
@@ -14,7 +17,7 @@ public class OrderServiceImpl implements OrderService {
         return memberRepository;
     }
 
-
+    @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, Discount discount) {
         this.memberRepository = memberRepository;
         this.discount = discount;
