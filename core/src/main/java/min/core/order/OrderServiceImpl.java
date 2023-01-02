@@ -10,6 +10,10 @@ public class OrderServiceImpl implements OrderService {
     //    private final Discount discount = new FixDiscount();
     private final Discount discount;
 
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
+    }
+
 
     public OrderServiceImpl(MemberRepository memberRepository, Discount discount) {
         this.memberRepository = memberRepository;
