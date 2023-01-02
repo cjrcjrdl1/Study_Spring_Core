@@ -6,8 +6,8 @@ import org.springframework.context.annotation.FilterType;
 
 @Configuration
 @ComponentScan(excludeFilters = @ComponentScan.Filter(
-        type = FilterType.ANNOTATION, classes = Configuration.class
-))
+        type = FilterType.ANNOTATION, classes = Configuration.class),
+        basePackages = "min.core")
 public class AutoAppConfig {
 
 }
