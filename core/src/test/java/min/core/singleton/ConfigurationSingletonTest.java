@@ -29,4 +29,15 @@ public class ConfigurationSingletonTest {
         assertThat(orderService.getMemberRepository()).isSameAs(memberRepository);
 
     }
+
+    @Test
+    void configurationDeep() {
+        ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+        //외부에서 주입해주는 AppConfig도 스프링 빈으로 등록됨
+        AppConfig bean = ac.getBean(AppConfig.class);
+
+        System.out.println("bean.getClass() = " + bean.getClass());
+        //@Bean이 붙은 메서드마다 스프링 빈이 기존에 존재하면 존재하는 빈을 반환하고 없으면 생성ㅇ해서 스프링 빈으로 등록하고 반환
+        // Bean만 사용해도 스프링빈으로 등록은 되지만, 싱글톤을 보장X
+    }
 }
