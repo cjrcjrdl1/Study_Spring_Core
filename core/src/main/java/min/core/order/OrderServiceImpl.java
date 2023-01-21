@@ -4,15 +4,21 @@ import lombok.RequiredArgsConstructor;
 import min.core.discount.Discount;
 import min.core.member.Member;
 import min.core.member.MemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-@RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService {
 
     private final MemberRepository memberRepository;
     //    private final Discount discount = new FixDiscount();
     private final Discount discount;
+
+    public OrderServiceImpl(MemberRepository memberRepository, @Qualifier("mainDiscount") Discount discount) {
+        this.memberRepository = memberRepository;
+        this.discount = discount;
+    }
 
     public MemberRepository getMemberRepository() {
         return memberRepository;

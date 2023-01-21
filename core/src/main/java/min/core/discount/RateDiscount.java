@@ -2,9 +2,11 @@ package min.core.discount;
 
 import min.core.member.Grade;
 import min.core.member.Member;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
+@Qualifier("mainDiscount")
 public class RateDiscount implements Discount {
 
     private int discountPercent = 10;
