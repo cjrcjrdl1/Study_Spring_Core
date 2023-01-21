@@ -1,6 +1,7 @@
 package min.core.order;
 
 import lombok.RequiredArgsConstructor;
+import min.core.annotation.MainDiscount;
 import min.core.discount.Discount;
 import min.core.member.Member;
 import min.core.member.MemberRepository;
@@ -15,7 +16,7 @@ public class OrderServiceImpl implements OrderService {
     //    private final Discount discount = new FixDiscount();
     private final Discount discount;
 
-    public OrderServiceImpl(MemberRepository memberRepository, @Qualifier("mainDiscount") Discount discount) {
+    public OrderServiceImpl(MemberRepository memberRepository, @MainDiscount Discount discount) {
         this.memberRepository = memberRepository;
         this.discount = discount;
     }
