@@ -1,11 +1,9 @@
 package min.core.order;
 
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import min.core.discount.Discount;
 import min.core.member.Member;
 import min.core.member.MemberRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
